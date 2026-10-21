@@ -1,0 +1,356 @@
+================================================================================
+                          SCHOOLSHIELD STORY MIND MAP
+                    (Based on js/script.js - Complete Flow)
+================================================================================
+
+                                                                  
+START
+│
+├── 1. NAME INPUT PROMPT
+│   └── "Tên của bạn là gì?" [Requires non-empty input]
+│
+├── 2. SCHOOL ARRIVAL SEQUENCE
+│   ├── Time: 07:05 sáng
+│   ├── Location: Sân trường (school entrance)
+│   ├── Sounds: 
+│   │   ├── Xe đạp (bicycle)
+│   │   ├── Tiếng gọi nhau (students calling)
+│   │   └── Tiếng cười về cuối tuần (weekend stories)
+│   └── Transition: 
+│       ├── "Những tiếng cười đùa ấy dần chuyển thành những bước chân háo hức đến lớp"
+│       └── "Nhưng từ hôm nay, lớp 8A sẽ đón thêm một thành viên mới"
+│
+├── 3. TRÚC LINH INTRODUCTION
+│   ├── Teacher (Cô Thảo) introduces new student
+│   ├── Trúc Linh's description:
+│   │   ├── Mái tóc đen buộc thấp (black hair tied low)
+│   │   ├── Ba lô màu xám (gray backpack)
+│   │   └── Cuốn sổ nhỏ (small notebook)
+│   ├── Trúc Linh's dialogue:
+│   │   └── "Chào c-các bạn. M-mình là Trúc Linh. Mong mọi người giúp đỡ mình!"
+│   └── Teacher's response:
+│       └── "Từ nay về sau chúng ta là người một nhà sống hòa thuận với nhau nhé!"
+│
+├── 4. GROUP ACTIVITY ANNOUNCEMENT
+│   ├── Teacher announces group work
+│   │   └── "Lớp ơi hôm nay chúng ta sẽ làm hoạt động nhóm nhé!<br>Cô cần các bạn tự chọn ra nhóm của mình, mỗi nhóm gồm 3 thành viên và 1 nhóm trưởng."
+│   ├── Classmate invitation:
+│   │   └── "{{player.name}}, Mai Anh, tớ bên này nè, vô chung cho vui!"
+│   └── Player's initial reaction:
+│       └── "Bạn ấy có vẻ hơi hồi hộp.<br>-{{player.name}} nói với Mai Anh-"
+│
+├── 5. FIRST MAJOR DECISION: CHOICE 1
+│   ├── Situation: Trúc Linh approaches groups but gets rejected
+│   │   ├── "Linh buồn bã nhìn về phía nhóm của bạn cùng lớp, nhưng chẳng có ai lên tiếng"
+│   │   ├── Tuấn: "Nhóm tao đủ rồi, mày sang chỗ khác đi!"
+│   │   └── Mỹ Hạnh: "Ừ đủ rồi cậu tìm chỗ khác đi"
+│   └── PLAYER'S 4 OPTIONS:
+│       │
+│       ├── OPTION 1: "Kệ dù sao cũng không phải việc của mình" (Ignore)
+│       │   ├── Stat changes: EMPATHY -5, AWARENESS -3
+│       │   ├── Trúc Linh's choice[1] = false
+│       │   └── Route recorded: 
+│       │       ├── Chapter: 1
+│       │       ├── Scene: "Hoạt động nhóm"
+│       │       ├── Context: "Linh không có nhóm"
+│       │       └── Choice: "Mặc kệ"
+│       │
+│       ├── OPTION 2: "Mời Linh vào nhóm của mình" (Invite)
+│       │   ├── Stat changes: EMPATHY +8, AWARENESS +5
+│       │   └── Route recorded:
+│       │       ├── Chapter: 1
+│       │       ├── Scene: "Hoạt động nhóm"
+│       │       ├── Context: "Linh không có nhóm"
+│       │       └── Choice: "Mời Linh vào nhóm"
+│       │
+│       ├── OPTION 3: "Hỏi ý kiến Mai Anh cho chắc" (Ask Mai Anh)
+│       │   ├── Stat changes: EMPATHY +3, SAFE +2
+│       │   └── Route recorded:
+│       │       ├── Chapter: 1
+│       │       ├── Scene: "Hoạt động nhóm"
+│       │       ├── Context: "Linh không có nhóm"
+│       │       └── Choice: "Hỏi Mai Anh có nên mời Linh vô nhóm"
+│       │
+│       └── OPTION 4: "Chờ cô Thảo xử lý" (Wait for Teacher)
+│           ├── Stat changes: SAFE +2, AWARENESS +1
+│           └── Route recorded:
+│               ├── Chapter: 1
+│               ├── Scene: "Hoạt động nhóm"
+│               ├── Context: "Linh không có nhóm"
+│               └── Choice: "Không làm gì (chờ giáo viên giải quyết)"
+│
+├── 6. SCENE 2: STAIRWELL INCIDENT (POST-CLASS)
+│   ├── Setting: Sau giờ học (after school) at cầu thang (stairwell)
+│   ├── Events:
+│   │   ├── Teacher assigns Linh to another group
+│   │   ├── Player observes Tuấn & Hạnh laughing at Linh's drawings
+│   │   │   ├── Dialogue: 
+│   │   │   │   ├── Tuấn: "Ê con kia! Bộ cuốn sổ đó đáng giá đến mức mày luôn phải cầm theo hả?"
+│   │   │   │   └── Trúc Linh: "T-tớ thích vẽ..."
+│   │   │   └── Player & Mai Anh overhear: "{{player.name}} và Mai Anh tình cờ đi ngang qua và nghe thấy những lời nói đó"
+│   │   └── Trúc Linh's reaction: 
+│   │       ├── "Linh nhanh tay lấy lại cuốn sổ của mình"
+│   │       ├── "Cô ấy lặng lẽ ôm nó trước ngực"
+│   │       └── "Bước đi về phía cầu thang"
+│   └── PLAYER'S 4 OPTIONS:
+│       │
+│       ├── OPTION 1: "Chắc mọi người chỉ đùa thôi" (Laugh along)
+│       │   ├── Stat changes: EMPATHY -8, AWARENESS -5
+│       │   └── Route recorded:
+│       │       ├── Chapter: 1
+│       │       ├── Scene: "Tuấn, Hạnh cười Linh sau giờ học"
+│       │       ├── Context: "Tuấn, Hạnh thấy các bức vẽ kỳ lạ của Linh"
+│       │       └── Choice: "Hùa, đùa theo"
+│       │
+│       ├── OPTION 2: "Đến hỏi thăm Linh" (Check on Linh)
+│       │   ├── Stat changes: AWARENESS +5, EMPATHY +8
+│       │   └── Route recorded:
+│       │       ├── Chapter: 1
+│       │       ├── Scene: "Tuấn, Hạnh cười Linh sau giờ học"
+│       │       ├── Context: "Tuấn, Hạnh thấy các bức vẽ kỳ lạ của Linh"
+│       │       └── Choice: "Hỏi thăm Linh"
+│       │
+│       ├── OPTION 3: "Nhắc nhở Tuấn" (Correct Tuấn)
+│       │   ├── Stat changes: AWARENESS +8, SAFE +5
+│       │   └── Route recorded:
+│       │       ├── Chapter: 1
+│       │       ├── Scene: "Tuấn, Hạnh cười Linh sau giờ học"
+│       │       ├── Context: "Tuấn, Hạnh thấy các bức vẽ kỳ lạ của Linh"
+│       │       └── Choice: "Nhắc nhỏ tuấn"
+│       │
+│       └── OPTION 4: "Tiếp tục quan sát" (Continue observing)
+│           ├── Stat changes: AWARENESS +5, SAFE +8
+│           └── Route recorded:
+│               ├── Chapter: 1
+│               ├── Scene: "Tuấn, Hạnh cười Linh sau giờ học"
+│               ├── Context: "Tuấn, Hạnh thấy các bức vẽ kỳ lạ của Linh"
+│               └── Choice: "Tiếp tục quan sát để đưa lụa chọn phù hợp"
+│
+├── 7. SCENE 2B: LIBRARY SCENE
+│   ├── Setting: Thư viện (library)
+│   ├── Events:
+│   │   ├── Group walks to library together
+│   │   ├── Player notices Linh's drawings again
+│   │   │   └── Dialogue: 
+│   │   │       └── Player: "...<br>\"Đúng là cô ấy vẽ giỏi thật, nhưng mà sao lại có bạn nói những bức tranh này kỳ lạ đến vậy?\""
+│   │   └── Linh remains quiet throughout
+│   └── PLAYER'S 4 OPTIONS:
+│       │
+│       ├── OPTION 1: "Nói chuyện với Mai" (Talk to Mai Anh)
+│       │   ├── Stat changes: EMPATHY -4, AWARENESS -5
+│       │   └── Route recorded:
+│       │       ├── Chapter: 1
+│       │       ├── Scene: "Linh, Mai Anh, người chơi vô thư viện"
+│       │       ├── Context: "Người chơi thấy bức tranh kỳ lạ của Linh thêm 1 lần nữa"
+│       │       └── Choice: "Nói xấu vơi Mai Anh"
+│       │
+│       ├── OPTION 2: "Hỏi riêng Trúc Linh" (Ask Linh directly)
+│       │   ├── Stat changes: AWARENESS +4, EMPATHY +2
+│       │   └── Route recorded:
+│       │       ├── Chapter: 1
+│       │       ├── Scene: "Linh, Mai Anh, người chơi vô thư viện"
+│       │       ├── Context: "Người chơi thấy bức tranh kỳ lạ của Linh thêm 1 lần nữa"
+│       │       └── Choice: "Hỏi riêng Linh (nói Linh không biết vẽ)"
+│       │
+│       ├── OPTION 3: "Nói chuyện với nhóm" (Talk to group)
+│       │   ├── Stat changes: EMPATHY +10, AWARENESS +12
+│       │   └── Route recorded:
+│       │       ├── Chapter: 1
+│       │       ├── Scene: "Linh, Mai Anh, người chơi vô thư viện"
+│       │       ├── Context: "Người chơi thấy bức tranh kỳ lạ của Linh thêm 1 lần nữa"
+│       │       └── Choice: "Cùng Mai Anh hỏi thăm, an ủi Linh"
+│       │
+│       └── OPTION 4: "Tiếp tục quan sát" (Continue observing)
+│           ├── Stat changes: SAFE +3, EMPATHY -2
+│           └── Route recorded:
+│               ├── Chapter: 1
+│               ├── Scene: "Linh, Mai Anh, người chơi vô thư viện"
+│               ├── Context: "Người chơi thấy bức tranh kỳ lạ của Linh thêm 1 lần nữa"
+│               └── Choice: "Im lặng không nó gì (Linh thấy khó chịu và đi về)"
+│
+├── 8. SCENE 3: GROUP CHAT INCIDENT
+│   ├── Setting: Nhóm lớp (class group chat)
+│   ├── Events:
+│   │   ├── Player sees Linh's drawings shared in class chat
+│   │   │   ├── Classmate bcl2: "|Có ai thấy tranh của Linh hôm nay không?|"
+│   │   │   ├── Image shared: "|Một bức ảnh chụp những trang trong cuốn sổ xuất hiện.|"
+│   │   │   └── Classmate bcl3: "|Cái hình gì đây?|"
+│   │   ├── Escalation: 
+│   │   │   ├── "Bắt đầu càng nhiều người bình luận sôi nổi hơn"
+│   │   │   └── "Bạn nhìn danh sách thành viên và không có Linh ở nhóm lớp"
+│   │   └── Mai Anh's question: "|Cậu thấy tin nhắn trong nhóm lớp chưa?|"
+│   └── PLAYER'S 4 OPTIONS:
+│       │
+│       ├── OPTION 1: "Chia sẻ cho bạn mình" (Share to other groups)
+│       │   ├── Stat changes: AWARENESS -3, EMPATHY +4, SAFE -5
+│       │   └── Route recorded:
+│       │       ├── Chapter: 1
+│       │       ├── Scene: "Người chơi thấy ảnh của Linh trên nhóm lớp"
+│       │       ├── Context: "Một thành viên trong lớp gửi bức vẽ lạ của Linh và nói xấu"
+│       │       └── Choice: "Gửi ảnh đó cho nhóm khác"
+│       │
+│       ├── OPTION 2: "Bình luận về bức ảnh" (Comment negatively)
+│       │   ├── Stat changes: AWARENESS -5, EMPATHY -7, SAFE -8
+│       │   └── Route recorded:
+│       │       ├── Chapter: 1
+│       │       ├── Scene: "Người chơi thấy ảnh của Linh trên nhóm lớp"
+│       │       ├── Context: "Một thành viên trong lớp gửi bức vẽ lạ của Linh và nói xấu"
+│       │       └── Choice: "Bình luận xấu về bức ảnh"
+│       │
+│       ├── OPTION 3: "Hỏi Linh thử" (Ask Linh directly)
+│       │   ├── Stat changes: AWARENESS +8, EMPATHY +5, SAFE +3
+│       │   └── Route recorded:
+│       │       ├── Chapter: 1
+│       │       ├── Scene: "Người chơi thấy ảnh của Linh trên nhóm lớp"
+│       │       ├── Context: "Một thành viên trong lớp gửi bức vẽ lạ của Linh và nói xấu"
+│       │       └── Choice: "Hỏi thăm Linh"
+│       │
+│       └── OPTION 4: "Méc cô" (Report to teacher)
+│           ├── Stat changes: AWARENESS +8, SAFE +10
+│           └── Route recorded:
+│               ├── Chapter: 1
+│               ├── Scene: "Người chơi thấy ảnh của Linh trên nhóm lớp"
+│               │   Context: "Một thành viên trong lớp gửi bức vẽ lạ của Linh và nói xấu"
+│               │   Choice: "Báo giáo viên"
+│
+├── 9. ENDING DETERMINATION (Based on accumulated stats)
+│   ├── System checks stats in this order:
+│   │
+│   ├── FIRST CHECK: TRUE ENDING CONDITION
+│   │   ├── IF: EMPATHY ≥ 80 AND AWARENESS ≥ 80 AND SAFE ≥ 60
+│   │   ├── THEN: True Ending (Ending D)
+│   │   │   ├── Ending text:
+│   │   │   │   ├── "<h5>Bạn không chỉ nhận ra vấn đề.</h5>"
+│   │   │   │   ├── "<h5>Bạn đã chủ động tìm cách tạo ra một thay đổi tích cực mà vẫn đảm bảo an toàn cho bản thân và những người xung quanh.</h5>"
+│   │   │   │   ├── "<h5>Bạn là người bạn tâm lý của mọi người xung quanh!</h5>"
+│   │   │   │   └── "<h5>Nhưng đừng quên bản thân, đôi lúc tựa vào ai đó cũng chính là cách bạn tự ôm lấy mình.</h5>"
+│   │   │   │   └── <h5>TRUE ENDING<br>NGƯỜI TẠO THAY ĐỔI</h5>
+│   │   │   └── Triggers: function(){finishChapter();}
+│   │   └── Story context recorded:
+│   │       ├── Chapter: 1
+│   │       ├── Scene: "end"
+│   │       ├── Context: "chỉ số đồng cảm, nhận diện, an toàn của người chơi ở mức xuất sắc (có thể cân nhắc nói những câu ấm áp vì không phải người bình thường có thể hiểu lòng người)"
+│   │       └── Choice: "true ending"
+│   │
+│   ├── SECOND CHECK: GOOD ENDING CONDITION
+│   │   ├── IF: EMPATHY ≥ 70 AND AWARENESS ≥ 70
+│   │   └── THEN: Good Ending (Ending C)
+│   │       ├── Ending text:
+│   │       │   ├── "<h5>Bạn đã biết quan sát, lắng nghe và lựa chọn cách hỗ trợ phù hợp.</h5>"
+│   │       │   ├── "<h5>Bạn hiểu rằng giúp đỡ người khác không nhất thiết phải bắt đầu bằng một hành động lớn.</h5>"
+│   │       │   │   └── "<h5>Đôi khi, một câu hỏi đơn giản như “Cậu ổn không?” cũng có thể tạo ra sự khác biệt.</h5>"
+│   │       │   └── <h5>ENDING C<br>NGƯỜI ĐỒNG HÀNH</h5>
+│   │       └── Triggers: function(){finishChapter();}
+│   │
+│   ├── THIRD CHECK: NORMAL ENDING CONDITION
+│   │   ├── IF: EMPATHY ≥ 45
+│   │   └── THEN: Normal Ending (Ending B)
+│   │       ├── Ending text:
+│   │       │   ├── "<h5>Bạn đã nhận ra một số vấn đề, nhưng đôi khi vẫn còn do dự trước khi hành động.</h5>"
+│   │       │   ├── "<h5>Quan sát là bước đầu tiên.</h5>"
+│   │       │   │   └── "<h5>Bước tiếp theo là học cách lựa chọn một hành động phù hợp và an toàn.</h5>"
+│   │       │   └── <h5>ENDING B<br>NGƯỜI QUAN SÁT</h5>
+│   │       └── Triggers: function(){finishChapter();}
+│   │
+│   └── ELSE: BAD ENDING (Ending A)
+│       ├── Condition: EMPATHY < 45 (all other cases)
+│       └── Ending text:
+│           ├── "<h5>Bạn đã nhìn thấy nhiều dấu hiệu trong câu chuyện, nhưng thường lựa chọn đứng ngoài.</h5>"
+│           ├── "<h5>Điều đó không có nghĩa bạn là người xấu.</h5>"
+│           ├── "<h5>Có thể bạn chưa biết phải làm gì hoặc lo rằng mình sẽ khiến tình hình tệ hơn.</h5>"
+│           │   └── "<h5>Hãy thử lại Chapter để khám phá những lựa chọn khác.</h5>"
+│           └── <h5>ENDING A<br>NGƯỜI ĐỨNG NGOÀI</h5>
+│           └── Triggers: function(){finishChapter();}
+│
+├── 10. FINAL REFLECTION SCENE (Scene 4)
+│   ├── Setting: Next morning at 7:10
+│   ├── Key visuals:
+│   │   ├── Player enters classroom feeling relieved
+│   │   ├── Morning sunlight through window
+│   │   ├── Sees Linh's old empty seat
+│   │   ├── Now sees Linh sitting with Mai Anh
+│   │   └── Sees Linh drawing a picture of an inclusive classroom
+│   ├── Dialogue highlights:
+│   │   ├── Player: "WOW, Cậu vẽ đẹp thật đấy!"
+│   │   ├── Trúc Linh: "Hôm nay mình muốn vẽ một lớp học mà ai cũng có chỗ."
+│   │   └── Mai Anh: "Có khi một chiếc ghế trống không chỉ là một chiếc ghế."
+│   └── Final lesson presentation:
+│       │
+│       ├── Core lessons displayed:
+│       │   ├── "Có những điều rất dễ bị bỏ qua."
+│       │   ├── "Một bạn ngồi một mình."
+│       │   ├── "Một bạn ngồi một mình." (repeated for emphasis)
+│       │   ├── "Một câu nói được gọi là “chỉ đùa thôi”."
+│       │   ├── "Một bức ảnh được chia sẻ mà chưa ai hỏi người trong ảnh có đồng ý hay không."
+│       │   └── "Những điều ấy có thể rất nhỏ nhưng cách chúng ta phản ứng với chúng có thể tạo nên một khác biệt rất lớn."
+│   │
+│   └── FINAL PLAYER REFLECTION (Choice):
+│       │
+│       ├── QUESTION: "centered Nè, chơi xong rồi, cậu đã rút ra được bài học gì vậy?"
+│       │
+│       ├── OPTION 1: "Không trêu chọc bạn bè vì đó là một hành động xấu."
+│       │   ├── Stat changes: AWARENESS +2, SAFE +7
+│       │   └── Context: "Điều mà người chơi cảm thấy quan trọng nhất."
+│       │
+│       ├── OPTION 2: "Khi phát hiện một người bị cô lập, cần chú ý đến cảm xúc của họ và tìm cách hỗ trợ phù hợp."
+│       │   ├── Stat changes: EMPATHY +5, AWARENESS +3
+│       │   └── Context: "Điều mà người chơi cảm thấy quan trọng nhất."
+│       │
+│       ├── OPTION 3: "Mọi vấn đề đều phải báo ngay cho giáo viên để được giải quyết kịp thời."
+│       │   ├── Stat changes: AWARENESS +3, SAFE +4
+│       │   └── Context: "Điều mà người chơi cảm thấy quan trọng nhất."
+│       │
+│       └── OPTION 4: "Người chứng kiến không nên can thiệp vì rất có thể sẽ bị thù ghét."
+│           ├── Stat changes: SAFE +7
+│           └── Context: "Điều mà người chơi cảm thấy quan trọng nhất."
+│
+================================================================================
+                          KEY STORY ELEMENTS SUMMARY
+================================================================================
+
+PLAYER ROLE:
+- Customizable name input at start ("Tên của bạn là gì?")
+- Makes choices that affect EMPATHY, AWARENESS, and SAFETY stats
+- Stats determine final ending (True/Good/Normal/Bad)
+
+MAIN CHARACTERS:
+- {{player.name}}: Player (customizable)
+- Mai Anh: Friendly classmate, color #1971c2
+- Trúc Linh: New transfer student, shy, notebook carrier, color #9c36b5
+- Quang Tuấn: Classmate who laughs at drawings, color #c92a2a
+- Mỹ Hạnh: Classmate, color #0c8599
+- Cô Thażo: Homeroom teacher, color #2b8a3e
+- Bạn cùng lớp: Generic classmates
+
+CORE THEMES:
+- Empathy and understanding others
+- Bystander intervention vs. passive observation
+- Responsible digital citizenship (sharing/commenting on others' content)
+- Speaking up vs. staying silent
+- Finding safe, constructive ways to help
+- Self-care while helping others ("thư thỏa" - relieved/peaceful state)
+
+STORY LESSONS (FROM FINAL SCENE):
+1. Small things matter: lonely seats, "just joking" comments, non-consensual photo sharing
+2. How we respond to small things creates big differences
+3. Four valid responses to witnessed injustice:
+   a) Don't mock friends (it's harmful)
+   b) Notice loneliness and offer appropriate support
+   c) Report issues to teacher promptly
+   d) Avoid intervening if it risks retaliation (acknowledges complexity)
+
+NARRATIVE STRUCTURE:
+- Linear progression with 4 major decision points
+- Each decision point has 4 options with different stat impacts
+- All paths from each decision converge to next scene
+- Final ending determined by cumulative stat thresholds
+- Multiple paths can lead to same ending based on different choice combinations
+
+================================================================================
+                          FILE INFORMATION
+================================================================================
+Source: C:\Users\henry\Documents\project\Web-novel\js/script.js
+Generated: Mon Oct 19 2026
+Location: C:\Users\henry\Documents\project\temp_mindmap\story_mindmap.txt
+Purpose: Text-based mind map for human readability of story structure
+================================================================================

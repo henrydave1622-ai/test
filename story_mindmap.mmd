@@ -1,0 +1,233 @@
+flowchart TD
+    %% STYLE DEFINITIONS
+    classDef startEnd fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef decision fill:#bbf,stroke:#333,stroke-width:2px;
+    classDef process fill:#bfb,stroke:#333,stroke-width:2px;
+    classDef ending fill:#f99,stroke:#333,stroke-width:2px;
+    classDef stats fill:#ff9,stroke:#333,stroke-width:2px;
+    
+    %% START SEQUENCE
+    A[Start] --> B["Input: Tên của bạn là gì?"]
+    B -->|Valid name| C[Play bell sound]
+    C --> D[Centered: 07:05 sáng.]
+    D --> E[Show scene entranceA]
+    E --> F[Play school sound]
+    F --> G["Sân trường vào đầu tuần. Học sinh từ nhiều hướng bước vào cổng. Những chiếc xe đạp lần lượt được dựng ngay ngắn trong khu vực để xe."]
+    G --> H["Tiếng bánh xe lăn trên sân. Tiếng gọi nhau í ới. Tiếng cười nói về những câu chuyện cuối tuần."]
+    H --> I["Những tiếng cười đùa ấy dần chuyển thành những bước chân háo hức đến lớp."]
+    
+    %% INTRODUCE TRÚC LINH
+    I --> J[Play bike-fall sound]
+    J --> K[Show player character btb]
+    K --> L["..."]
+    L --> M[Player: Chết rồi sắp trễ học đến nơi rồi!]
+    M --> N[Hide player character]
+    N --> O["{{player.name}} chạy vụt về phía dãy phòng học khối 8, xuyên qua dãy người đông đúc."]
+    O --> P[Show scene hallwayB]
+    P --> Q["Thứ Hai luôn bắt đầu bằng rất nhiều âm thanh."]
+    Q --> R["Tiếng bạn bè kể chuyện cuối tuần."]
+    R --> S["Tiếng bàn luận về bài kiểm tra sắp tới."]
+    S --> T["Tiếng gọi nhau từ cuối hành lang."]
+    T --> U["Mọi thứ dường như vẫn giống mọi ngày."]
+    U --> V["Nhưng từ hôm nay, lớp 8A sẽ đón thêm một thành viên mới."]
+    
+    V --> W[Play heel-walk sound]
+    W --> X[Show scene classroomB]
+    X --> Y["Tiếng bước chân vang vọng ngoài lớp học, học sinh dù có đang làm gì đều bỏ dở việc đang làm mà ngoan ngoãn quay về chỗ ngồi của họ."]
+    Y --> Z[Stop sound]
+    Z --> AA[Show teacher ct]
+    AA --> AB[Teacher: Chào các em, trước khi bắt đầu tiết học, cô muốn giới thiệu với cả lớp một bạn mới chuyển đến trường chúng ta!]
+    AB --> AC[Show character tl]
+    AC --> AD["Một cô bé bước vào lớp với mái tóc đen buộc thấp, chiếc ba lô màu xám trên vai và một cuốn sổ nhỏ được cô cẩn thận cầm trên tay."]
+    AD --> AE["Đứng trước cả lớp, cô bé nhẹ siết cuốn sổ tay, lấy hết dũng khí để giới thiệu."]
+    AE --> AF[Trúc Linh: Chào c-các bạn. M-mình là Trúc Linh. Mong mọi người giúp đỡ mình!]
+    AF --> AG[Teacher: Từ nay về sau chúng ta là người một nhà sống hòa thuận với nhau nhé!]
+    AG --> AH[Hide Trúc Linh]
+    AH --> AI[Hide teacher]
+    
+    %% GROUP ACTIVITY INTRODUCTION
+    AI --> AJ[Play clap sound]
+    AJ --> AK[Show player character]
+    AK --> AL["Player: Bạn ấy có vẻ hơi hồi hộp.<br>-{{player.name}} nói với Mai Anh-"]
+    AL --> AM[Hide player]
+    AM --> AN[Show player character right]
+    AN --> AO[Show Mai Anh]
+    AO --> AP[Mai Anh: Ừ... Nhưng mà nếu cậu chuyển đến một môi trường hoàn toàn mới thì cậu cũng hồi hộp như bạn ấy thôi.]
+    AP --> AQ[Player: Cũng đúng...]
+    AQ --> AR[Show scene classroomC]
+    AR --> AS[Show teacher]
+    AS --> AT[Teacher: Lớp ơi hôm nay chúng ta sẽ làm hoạt động nhóm nhé!<br>Cô cần các bạn tự chọn ra nhóm của mình, mỗi nhóm gồm 3 thành viên và 1 nhóm trưởng.]
+    AT --> AU[Classmate: {{player.name}}, Mai Anh, tớ bên này nè, vô chung cho vui!]
+    AU --> AV[Show player character]
+    AV --> AW[Player: Tới liền!]
+    AW --> AX[Hide player]
+    AX --> AY[Show Quang Tuấn]
+    AY --> AZ[Quang Tuấn: Ê Hạnh, vào chung nhóm với tao.]
+    AZ --> BA[Hide Quang Tuấn]
+    BA --> BB[Show Mỹ Hạnh]
+    BB --> BC[Mỹ Hạnh: Ok ông.]
+    BC --> BD[Hide Mỹ Hạnh]
+    BD --> BE["Sau 5 phút náo loạn thì lớp bắt đầu trật tự lại, cô Thảo nhìn một vòng quanh lớp.<br>Cô chợt nhận thấy Linh đang đứng cô đơn lẻ loi một mình."]
+    
+    %% FIRST DECISION POINT: CHOICE1
+    BE --> BF[Show teacher]
+    BF --> BG[Teacher: Linh ơi con ra hỏi xem nhóm bạn nào còn thiếu người không nè?]
+    BG --> BH[Show Trúc Linh]
+    BH --> BI[Trúc Linh: D-dạ.]
+    BI --> BJ[Hide Trúc Linh]
+    BJ --> BK[Show Trúc Linh center]
+    BK --> BL[Hide teacher]
+    BL --> BM["Linh dè chừng bước tới nhóm của Tuấn và hỏi:"]
+    BM --> BN[Trúc Linh: M-mình có thể vô nhóm các bạn được không?]
+    BN --> BO[Show Quang Tuấn]
+    BO --> BP[Quang Tuấn: Nhóm tao đủ rồi, mày sang chỗ khác đi!]
+    BP --> BQ["Linh buồn bã nhìn về phía nhóm của bạn cùng lớp, nhưng chẳng có ai lên tiếng."]
+    BQ --> BR[Hide Quang Tuấn]
+    BR --> BS[Show Mỹ Hạnh]
+    BS --> BT[Mỹ Hạnh: Ừ đủ rồi cậu tìm chỗ khác đi]
+    BT --> BU[Trúc Linh: Ừm... tớ sẽ tìm nhóm khác.]
+    BU --> BV[Hide Mỹ Hạnh]
+    BV --> BW[Hide Trúc Linh]
+    BW --> BX[Show Trúc Linh left]
+    BX --> BY["Linh lủi thủi trở về chỗ ngồi của cô ấy"]
+    BY --> BZ[Hide Trúc Linh]
+    BZ --> CA[Jump to choice1]
+    
+    %% CHOICE1 DECISION
+    CA --> CB[Choice1]
+    CB -->|1: Kệ dù sao cũng không phải việc của mình.| CG[<b>Mặc kệ</b><br>empathy -5, awareness -3]
+    CB -->|2: Mời Linh vào nhóm của mình.| CH[<b>Mời Linh vào nhóm</b><br>empathy +8, awareness +5]
+    CB -->|3: Hỏi ý kiến Mai Anh cho chắc.| CI[<b>Hỏi Mai Anh</b><br>empathy +3, safe +2]
+    CB -->|4: Chờ cô Thảo xử lý.| CJ[<b>Chờ giáo viên</b><br>safe +2, awareness +1]
+    
+    %% ALL PATHS FROM CHOICE1 LEAD TO SCENE2
+    CG --> CK[Scene2: Stairwell incident]
+    CH --> CK
+    CI --> CK
+    CJ --> CK
+    
+    %% SCENE2: STAIRWELL INCIDENT
+    CK --> CL[Show scene classroomD]
+    CL --> CM[Play school-bell2 sound]
+    CM --> CN[Show teacher]
+    CN --> CO[Teacher: Lớp ơi, chúng ta kết thúc ở đây nhé!<br>Hẹn gặp lại các em vào tiết học sau nhé!]
+    CO --> CP[Stop sound]
+    CP --> CQ[Hide teacher]
+    CQ --> CR[Show scene hallwayA]
+    CR --> CS["Hành lang dần trở nên đông đúc, học sinh lớp 8A lần lượt rời khỏi lớp học, tiếng cười nói dần trở nên náo nhiệt."]
+    CS --> CT["{{player.name}} và Mai Anh đang cùng nhau đi về cầu thang thì bỗng nghe thấy giọng Tuấn vang vọng từ cầu thang lên:"]
+    CT --> CU[Show scene stairwayB]
+    CU --> CV[Show Quang Tuấn]
+    CV --> CW[Quang Tuấn: Ê con kia! Bộ cuốn sổ đó đáng giá đến mức mày luôn phải cầm theo hả?]
+    CW --> CX[Show Trúc Linh]
+    CX --> CY[Trúc Linh: ...]
+    CY --> CZ[Trúc Linh: T-tớ thích vẽ...]
+    CZ --> DA[Quang Tuấn: Mày đưa đây tao xem nào.]
+    DA --> DB[Show Trúc Linh]
+    DB --> DC[Trúc Linh: M-mình có thể vào nhóm các bạn được không?]
+    DC --> DD[Quang Tuấn: Nhóm tao đủ rồi, mày sang chỗ khác đi!]
+    DD --> DE["Linh buồn bã nhìn về phía nhóm của bạn cùng lớp, nhưng chẳng có ai lên tiếng."]
+    DE --> DF[Hide Quang Tuấn]
+    DF --> DG[Show Mỹ Hạnh]
+    DG --> DH[Mỹ Hạnh: Ừ đủ rồi cậu tìm chỗ khác đi]
+    DH --> DI[Trúc Linh: Ừm... tớ sẽ tìm nhóm khác.]
+    DI --> DJ[Hide Mỹ Hạnh]
+    DJ --> DK[Hide Trúc Linh]
+    DK --> DL[Show Trúc Linh left]
+    DL --> DM["Linh lủi thủi trở về chỗ ngồi của cô ấy"]
+    DM --> DN[Hide Trúc Linh]
+    DN --> DO[Jump to choice2]
+    
+    %% SECOND DECISION POINT: CHOICE2
+    DO --> DP[Choice2]
+    DP -->|1: Chắc mọi người chỉ đùa thôi.| DQ[<b>Hùa, đùa theo</b><br>empathy -8, awareness -5]
+    DP -->|2: Đến hỏi thăm Linh.| DR[<b>Hỏi thăm Linh</b><br>awareness +5, empathy +8]
+    DP -->|3: Nhắc nhở Tuấn.| DS[<b>Nhắc nhỏ Tuấn</b><br>awareness +8, safe +5]
+    DP -->|4: Tiếp tục quan sát.| DT[<b>Tiếp tục quan sát</b><br>awareness +5, safe +8]
+    
+    %% ALL PATHS FROM CHOICE2 LEAD TO SCENE2B
+    DQ --> DU[Scene2b: Library scene]
+    DR --> DU
+    DS --> DU
+    DT --> DU
+    
+    %% SCENE2B: LIBRARY SCENE WITH LINH'S DRAWINGS
+    DU --> DV[Show scene libraryA]
+    DV --> DW[Show Trúc Linh]
+    DW --> DX[Show player character]
+    DX --> DY[Show Mai Anh]
+    DY --> DZ["Trên đường đi mặc dù {{player.name}} và Mai Anh trò chuyện rôm rả, nhưng Linh vẫn trầm lặng chẳng nói câu nào, chỉ chăm chú ôm chặt cuốn sổ tay nhỏ..."]
+    DZ --> EA[Show player character]
+    EA --> EB[Player: ...<br>"Đúng là cô ấy vẽ giỏi thật, nhưng mà sao lại có bạn nói những bức tranh này kỳ lạ đến vậy?"]
+    EB --> EC[Show scene libraryB]
+    EC --> ED["Nhóm bạn cuối cùng cũng đến thư viện"]
+    
+    %% THIRD DECISION POINT: SCENE2B CHOICE
+    ED --> EE[Choice: Giây phút bạn ngồi xuống thì bạn tình cờ nhìn thấy những bức tranh kỳ lạ ấy.]
+    EE -->|1: Nói chuyện với Mai.| EF[<b>Nói xấu về Mai Anh</b><br>empathy -4, awareness -5]
+    EE -->|2: Hỏi riêng Trúc Linh.| EG[<b>Hỏi riêng Linh</b><br>awareness +4, empathy +2]
+    EE -->|3: Nói chuyện với nhóm.| EH[<b>Cùng Mai Anh hỏi thăm, an ủi Linh</b><br>empathy +10, awareness +12]
+    EE -->|4: Tiếp tục quan sát.| EI[<b>Im lặng không nói gì (Linh thấy khó chịu và đi về)</b><br>safe +3, empathy -2]
+    
+    %% ALL PATHS FROM SCENE2B LEAD TO SCENE3
+    EF --> EJ[Scene3: Group chat incident]
+    EG --> EJ
+    EH --> EJ
+    EI --> EJ
+    
+    %% SCENE3: GROUP CHAT INCIDENT WITH LINH'S DRAWINGS
+    EJ --> EK[Show scene desk]
+    EK --> EL[Show player character]
+    EL --> EM[Show Mai Anh]
+    EM --> EN[Play noti sound]
+    EN --> EO[Player: "Group lớp à?"]
+    EO --> EP[Classmate bcl2: |Có ai thấy tranh của Linh hôm nay không?|]
+    EP --> EQ[|Một bức ảnh chụp những trang trong cuốn sổ xuất hiện.|]
+    EQ --> ER[Classmate bcl3: |Cái hình gì đây?|]
+    ER --> ES["Bắt đầu càng nhiều người bình luận sôi nổi hơn."]
+    ES --> ET["Bạn nhìn danh sách thành viên và không có Linh ở nhóm lớp."]
+    ET --> EU[Play noti2 sound]
+    EU --> EV[Mai Anh: |Cậu thấy tin nhắn trong nhóm lớp chưa?|]
+    
+    %% FOURTH DECISION POINT: SCENE3 CHOICE
+    EV --> EW[Choice: "Ở trên mạng, một nội dung có thể được chia sẻ nhanh hơn rất nhiều"]
+    EW -->|1: Chia sẻ cho bạn mình.| EX[<b>Gửi ảnh đó cho nhóm khác</b><br>awareness -3, empathy +4, safe -5]
+    EW -->|2: Bình luận về bức ảnh.| EY[<b>Bình luận xấu về bức ảnh</b><br>awareness -5, empathy -7, safe -8]
+    EW -->|3: Hỏi Linh thử.| EZ[<b>Hỏi thăm Linh</b><br>awareness +8, empathy +5, safe +3]
+    EW -->|4: Méc cô.| FA[<b>Báo giáo viên</b><br>awareness +8, safe +10]
+    
+    %% ALL PATHS FROM SCENE3 LEAD TO ENDING DETERMINATION
+    EX --> FB[Ending Determination]
+    EY --> FB
+    EZ --> FB
+    FA --> FB
+    
+    %% ENDING DETERMINATION BASED ON STATS
+    FB --> FC{empathy >= 80 AND awareness >= 80 AND safe >= 60}
+    FC -->|Yes| GD[<b>True Ending</b><br>NGƯỜI TẠO THAY ĐỔI]
+    FC -->|No| FE{empathy >= 70 AND awareness >= 70}
+    FE -->|Yes| GD[<b>Good Ending</b><br>NGƯỜI ĐỒNG HÀNH]
+    FE -->|No| FD{empathy >= 45}
+    FD -->|Yes| GC[<b>Normal Ending</b><br>NGƯỜI QUAN SÁT]
+    FD -->|No| GB[<b>Bad Ending</b><br>NGƯỜI ĐỨNG NGOÀI]
+    
+    %% ENDINGS
+    GD --> GE[True Ending Screen]
+    GE --> GG[function(){finishChapter();}]
+    
+    GB --> GF[Bad Ending Screen]
+    GF --> GG
+    
+    GC --> GE[Normal Ending Screen]
+    GE --> GG
+    
+    GD --> GE[Good Ending Screen]
+    GE --> GG
+    
+    %% APPLY STYLES
+    class A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,AA,AC,AD,AE,AF,AH,AI,AJ,AK,AL,AM,AN,AO,AQ,AR,AS,AT,AU,AV,AW,AX,AZ,BA,BB,BC,BD,BE,BF,BG,BH,BI,BJ,BK,BL,BM,BN,BO,BP,BQ,BR,BT,BV,BW,BX,BY,BZ,CA,CK,CL,CM,CN,CO,CP,CQ,CR,CS,CT,CU,CW,CX,CY,DA,DB,DC,DD,DE,DF,DG,DH,DI,DJ,DK,DL,DM,DN,DO,DU,DV,DW,DX,DY,DZ,EA,EB,EC,ED,EE,EJ,EK,EL,EM,EO,EP,EQ,ER,ES,ET,EU,EV,EW process
+    class CB,DP,EE,EW decision
+    class CG,CH,CI,CJ,DQ,DR,DS,DT,EF,EG,EH,EI,EX,EY,EZ,FA decision
+    class FC,FE,FD decision
+    class GB,GC,GD,GE ending
+    class GG startEnd
